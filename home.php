@@ -6,20 +6,21 @@ session_start();
 // include the required files
 require '../BrucesAdminArea/includes/dbConnect.inc.php';
 
-//*
+/*
 echo "<pre>";
 print_r($_SESSION);
 echo "</pre>";
 //*/
 
 // handle variables
-$ses_user_level = $_SESSION['user_level']
+$ses_user_level = $_SESSION['user_level'];
 
 ?>
 
 <!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
 	<title>CMS</title>
+	<link type="text/css" rel="stylesheet" href="css/styles.css">
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
@@ -32,6 +33,8 @@ if($ses_user_level == "reg" || $ses_user_level == "admin" || $ses_user_level == 
 	// for convinience
 	
 	include 'includes/topnav.php';
+	
+	echo "<div class='content'>";
 	
 	if (isset($_GET["action"])) {
 		$action = $_GET["action"];
@@ -97,6 +100,8 @@ if($ses_user_level == "reg" || $ses_user_level == "admin" || $ses_user_level == 
 		
 		break;
 	}
+	
+	echo "</div>";
 	
 }else{
 	
