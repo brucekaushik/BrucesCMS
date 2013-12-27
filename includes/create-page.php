@@ -14,12 +14,12 @@ $template_names = array();
 
 // read the contents of the directory..
 // store the pages in an array
-while ($x = readdir($d)){
-	$pagenames[] = $x;
+while ($file = readdir($d)){
+	$pagenames[] = $file;
 }
 
-while ($x = readdir($t)){
-	$templates[] = $x;
+while ($file = readdir($t)){
+	$templates[] = $file;
 }
 
 closedir($d);
@@ -39,13 +39,14 @@ console.log(typeof o);
 
 <div class="form">
 	<form name="page_create"  id="page_create" method="post" action="home.php?action=create-page-submission" onsubmit="return verifyPageName()">
-		Page Name: <input name="pagenames" type="hidden" value='<?php echo $pagenames_text ?>' >
+		<input name="pagenames" type="hidden" value='<?php echo $pagenames_text ?>' >
+		Page Name: 
 		<input name="page_name" id="page_name" type="text"> <span>.php</span><br><br>
 		Pick Template: <select name='template_name'>
 			<?php 
-				foreach ($templates as $x){
-					if($x !== "." && $x !== ".."){
-						echo "<option value='$x'>$x</option>";	
+				foreach ($templates as $template){
+					if($template !== "." && $template !== ".."){
+						echo "<option value='$template'>$template</option>";	
 					}
 				}
 			?>

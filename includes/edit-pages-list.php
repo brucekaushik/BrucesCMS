@@ -3,6 +3,10 @@
 // directory path
 $dir = "pages";
 
+// handle variables
+$ses_username = $_SESSION['username'];
+$ses_user_level = $_SESSION['user_level'];
+
 // get the page names from the database
 if($ses_user_level == "reg"){
 	$query = " SELECT page_name FROM CmsPageContent WHERE username='$ses_username' ";

@@ -6,10 +6,11 @@ if (isset($_GET["action"]) && $_GET["action"] == "create-page-submission") {
 	$pagenames = $_POST["pagenames"];
 	$pagenames = unserialize($pagenames);
 	$template_name = $_POST["template_name"];
+	//TODO: Santize
 		
-	foreach ($pagenames as $x){
+	foreach ($pagenames as $page){
 		
-		if($x == $page_name){
+		if($page == $page_name){
 			$page_status =  "the page name already exists, try using a different name";
 			break;
 		}

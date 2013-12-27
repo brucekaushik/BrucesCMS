@@ -1,3 +1,9 @@
+<?php 
+
+// TODO: currently, adding page content is compulsory if its not added the page won't be visible, and therefore can't be edited/deleted/re-created fix this bug
+
+?>
+
 <br><h3>Add Content To Your Page</h3><br><br>
 
 <form name="add-page-content" id="add-page-content" method="post" action="home.php?action=add-page-content-submission">
