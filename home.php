@@ -4,13 +4,16 @@
 session_start();
 
 // include the required files
-require '../08-adminArea/includes/dbConnect.inc.php';
+require '../BrucesAdminArea/includes/dbConnect.inc.php';
 
 //*
 echo "<pre>";
 print_r($_SESSION);
 echo "</pre>";
 //*/
+
+// handle variables
+$ses_user_level = $_SESSION['user_level']
 
 ?>
 
@@ -23,12 +26,6 @@ echo "</pre>";
 <div class="wrapper">
 
 <?php
-
-/*
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
-//*/
 
 if($ses_user_level == "reg" || $ses_user_level == "admin" || $ses_user_level == "root"){
 	

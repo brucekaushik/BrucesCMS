@@ -4,7 +4,7 @@
 session_start();
 
 // include the required files
-require '../../08-adminArea/includes/dbConnect.inc.php';
+require '../../BrucesAdminArea/includes/dbConnect.inc.php';
 
 // get the current page url
 $url = $_SERVER["REQUEST_URI"];

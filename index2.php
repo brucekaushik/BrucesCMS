@@ -9,7 +9,13 @@ print_r($_SESSION);
 echo "</pre>";
 //*/
 
-require '../08-adminArea/includes/dbConnect.inc.php';
+// handle variables
+$ses_username = $_SESSION['username'];
+unset($_SESSION['app_name']);
+unset($_SESSION['verify_back_to']);
+unset($_SESSION['action']);
+
+require '../BrucesAdminArea/includes/dbConnect.inc.php';
 
 $userDetailsQuery = "select * from AdminArea where username='$ses_username'";
 $userDetailsRes = mysql_query($userDetailsQuery, $c);
